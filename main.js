@@ -17,10 +17,14 @@ function error() {
 }
 
 function getMap(latitude, longitude) {
-    L.marker([latitude, longitude], {
+  const map = L.map("map").setView([latitude, longitude], 7);
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
+  L.marker([latitude, longitude], {
 	  draggable:true,
 	  title: "Text for marker",
-  }).addTo(map);
+  }).addTo(map)
+	.bindPopup("<img src='gas-station.png' width=50 height=50 </img> <h1> Petrol Station </h1> <p> Petrol Station N.01 </p>");
+	
   
 /* global L Papa */
 
