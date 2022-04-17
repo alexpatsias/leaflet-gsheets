@@ -23,7 +23,7 @@ function getMap(latitude, longitude) {
 	  draggable:true,
 	  title: "Text for marker",
   }).addTo(map)
-	.bindPopup(<h1> Position </h1> );
+	.bindPopup("<h1> Position </h1>" );
  
 /* global L Papa */
 
