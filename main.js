@@ -24,8 +24,6 @@ function getMap(latitude, longitude) {
 	  title: "Text for marker",
   }).addTo(map);
 
-	
-	/////
 /* global L Papa */
 
 /*
