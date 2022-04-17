@@ -43,9 +43,14 @@ let panelID = "my-info-panel";
 /*
  * init() is called when the page has loaded
  */
+function getMap(latitude, longitude) {
+	
 function init() {
-	function getMap(latitude, longitude) {
-		
+	L.marker([latitude, longitude], {
+	  draggable:true,
+	  title: "Text for marker",
+  }).addTo(map);
+}
   // Create a new Leaflet map centered on the continental US
   map = L.map("map").setView(latitude, longitude, 14);
 
@@ -269,4 +274,4 @@ function parseGeom(gj) {
     return [{ type: "Feature", geometry: { type: type, coordinates: gj } }];
   }
  }
-}	
+	
