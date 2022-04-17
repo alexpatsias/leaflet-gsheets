@@ -1,3 +1,11 @@
+(() => {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(success, error);
+  } else {
+    alert("Geolocation is not supported by this browser");
+  }    
+})();
+
 /* global L Papa */
 
 /*
