@@ -44,13 +44,14 @@ let panelID = "my-info-panel";
  * init() is called when the page has loaded
  */
 function getMap(latitude, longitude) {
-	
-function init() {
 	L.marker([latitude, longitude], {
 	  draggable:true,
 	  title: "Text for marker",
   }).addTo(map);
 }
+	
+function init() {
+	
   // Create a new Leaflet map centered on the continental US
   map = L.map("map").setView(latitude, longitude, 14);
 
