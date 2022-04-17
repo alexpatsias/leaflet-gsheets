@@ -61,8 +61,7 @@ function init() {
       closeButton: true,
       position: "right",
     })
-    .addTo(map)
-    .bindPopup();
+    .addTo(map);
 
   let panelContent = {
     id: panelID,
