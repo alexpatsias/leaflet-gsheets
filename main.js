@@ -16,15 +16,7 @@ function error() {
   alert("Unable to retrieve location");
 }
 
-function getMap(latitude, longitude) {
-  const mape = L.mape("map").setView([latitude, longitude], 7);
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
-  L.marker([latitude, longitude], {
-	  draggable:true,
-	  title: "Text for marker",
-  }).addTo(map)
-	.bindPopup("<h1> Position </h1>" );
- 
+
 /* global L Papa */
 
 /*
@@ -52,7 +44,7 @@ let panelID = "my-info-panel";
  */
 function init() {
   // Create a new Leaflet map centered on the continental US
-  map = L.map("map").setView([51.5, -0.1], 14);
+  map = L.map("map").setView(latitude, latitude, 14);
 
   // This is the Carto Positron basemap
   L.tileLayer(
@@ -63,6 +55,10 @@ function init() {
       subdomains: "abcd",
       maxZoom: 19,
     }
+	  L.marker([latitude, longitude], {
+	  draggable:true,
+	  title: "Text for marker",  
+		  
   ).addTo(map);
 
   sidebar = L.control
