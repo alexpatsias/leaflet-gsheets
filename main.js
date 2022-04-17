@@ -1,22 +1,4 @@
-(() => {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(success, error);
-  } else {
-    alert("Geolocation is not supported by this browser");
-  }    
-})();
-
-function success(position) {
-  const latitude = position.coords.latitude;
-  const longitude = position.coords.longitude;
-  getMap(latitude, longitude);
-}
-
-function error() {
-  alert("Unable to retrieve location");
-}
-
-  
+ 
 /* global L Papa */
 
 /*
