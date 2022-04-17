@@ -132,7 +132,7 @@ function addGeoms(data) {
     },
     style: geomStyle,
   }).addTo(map)
- .bindPopup('<h2>' + data[row].name + 'There is a ' + data[row].decsription + ' here' );;
+ .bindPopup('<h2>' + data[row].name + 'There is a ' + data[row].decsription + ' here' );
 }
 
 /*
