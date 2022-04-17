@@ -60,10 +60,10 @@ function init() {
 	 // title: "Text for marker",  
    //}).addTo(map);
 
-var marker = L.marker (latitude, longitude) {
-	  draggable:true,
-	  title: "Text for marker",
-  }).addTo(map);
+//var marker = L.marker (latitude, longitude) {
+	//  draggable:true,
+	//  title: "Text for marker",
+ // }).addTo(map);
 
 
   sidebar = L.control
