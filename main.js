@@ -9,16 +9,16 @@
 // these URLs come from Google Sheets 'shareable link' form
 // the first is the geometry layer and the second the points
 let geomURL =
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vSMmvaM5SBCKRGKSzKM9fe1MbmGp3tROSxywM1Mv6wIjttte5auFSEHsJCVT7sKSRfAbR1l-Cdkyb3D/pub?output=csv";
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vTsAyA0Hpk_-WpKyN1dfqi5IPEIC3rqEiL-uwElxJpw_U7BYntc8sDw-8sWsL87JCDU4lVg2aNi65ES/pub?output=csv";
 let pointsURL =
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRZ9_ZWmZbc9RkPWbNLb72jsGcTdZ2DgWlyQ4QQVF7MVb-Goluzm4KfAdX05-DhoAiGyNUd4VpEpUhf/pub?output=csv";
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vSFQw9sVY16eQmN5TIjOH7CUaxeZnl_v6LcdE2goig1pSe9I3hipeOn1sOwmC4fS0AURefRWwcKExct/pub?output=csv";
 
 window.addEventListener("DOMContentLoaded", init);
 
 let map;
 let sidebar;
 let panelID = "my-info-panel";
-	
+
 /*
  * init() is called when the page has loaded
  */
@@ -167,7 +167,7 @@ function addPoints(data) {
     marker.addTo(pointGroupLayer);
 
     // UNCOMMENT THIS LINE TO USE POPUPS
-    // marker.bindPopup('<h2>' + data[row].name + '</h2>There's a ' + data[row].description + ' here');
+    //marker.bindPopup('<h2>' + data[row].name + '</h2>There's a ' + data[row].description + ' here');
 
     // COMMENT THE NEXT GROUP OF LINES TO DISABLE SIDEBAR FOR THE MARKERS
     marker.feature = {
