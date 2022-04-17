@@ -47,19 +47,18 @@ function init() {
   map = L.map("map").setView(latitude, latitude, 14);
 
   // This is the Carto Positron basemap
-  L.tileLayer(
-    "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.png",
-    {
-      attribution:
-        "&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> &copy; <a href='http://cartodb.com/attributions'>CartoDB</a>",
-      subdomains: "abcd",
-      maxZoom: 19,
-    }
-	  L.marker([latitude, longitude], {
+  L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.png").addTo(map);
+    //{
+      //attribution:
+        //"&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> &copy; <a href='http://cartodb.com/attributions'>CartoDB</a>",
+      //subdomains: "abcd",
+      //maxZoom: 19,
+    //}
+   L.marker([latitude, longitude], {
 	  draggable:true,
 	  title: "Text for marker",  
-		  
-  ).addTo(map);
+   }).addTo(map);
+		 
 
   sidebar = L.control
     .sidebar({
