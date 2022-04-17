@@ -22,8 +22,7 @@ function getMap(latitude, longitude) {
   L.marker([latitude, longitude], {
 	  draggable:true,
 	  title: "Text for marker",
-  }).addTo(map)
-	.bindPopup("<img src='gas-station.png' width=50 height=50 </img> <h1> Petrol Station </h1> <p> Petrol Station N.01 </p>");
+  }).addTo(map);
 	
   
 /* global L Papa */
