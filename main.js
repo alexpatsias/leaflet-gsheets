@@ -9,7 +9,7 @@
 function success(position) {
   const latitude = position.coords.latitude;
   const longitude = position.coords.longitude;
-  init(latitude, longitude);
+  getMap(latitude, longitude);
 }
 
 function error() {
@@ -55,11 +55,17 @@ function init() {
       //subdomains: "abcd",
       //maxZoom: 19,
     //}
-   L.marker([latitude, longitude], {
+   //L.marker([latitude, longitude], {
+	//  draggable:true,
+	 // title: "Text for marker",  
+   //}).addTo(map);
+
+function getMap(latitude, longitude) {
+	L.marker([latitude, longitude], {
 	  draggable:true,
-	  title: "Text for marker",  
-   }).addTo(map);
-		 
+	  title: "Text for marker",
+  }).addTo(map);
+}
 
   sidebar = L.control
     .sidebar({
