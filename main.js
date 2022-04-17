@@ -9,7 +9,7 @@
 function success(position) {
   const latitude = position.coords.latitude;
   const longitude = position.coords.longitude;
-  getMap(latitude, longitude);
+  init(latitude, longitude);
 }
 
 function error() {
@@ -34,7 +34,7 @@ let geomURL =
 let pointsURL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vRZ9_ZWmZbc9RkPWbNLb72jsGcTdZ2DgWlyQ4QQVF7MVb-Goluzm4KfAdX05-DhoAiGyNUd4VpEpUhf/pub?output=csv";
 
-window.addEventListener("DOMContentLoaded", getMap); //Change init 2 getMap
+window.addEventListener("DOMContentLoaded", init); 
 
 let map;
 let sidebar;
@@ -43,7 +43,7 @@ let panelID = "my-info-panel";
 /*
  * init() is called when the page has loaded
  */
-function getMap(latitude, longitude) {
+function init() {
   // Create a new Leaflet map centered on the continental US
   map = L.map("map").setView(latitude, longitude, 14);
 
