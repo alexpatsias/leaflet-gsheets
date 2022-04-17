@@ -9,7 +9,7 @@
 function success(position) {
   const latitude = position.coords.latitude;
   const longitude = position.coords.longitude;
-  //getMap(latitude, longitude);
+  getMap(latitude, longitude);
 }
 
 function error() {
@@ -44,8 +44,10 @@ let panelID = "my-info-panel";
  * init() is called when the page has loaded
  */
 function init() {
+	function getMap(latitude, longitude) {
+		
   // Create a new Leaflet map centered on the continental US
- const map = L.map("map").setView(latitude, longitude, 14);
+  map = L.map("map").setView(latitude, longitude, 14);
 
   // This is the Carto Positron basemap
   L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.png").addTo(map);
@@ -266,4 +268,5 @@ function parseGeom(gj) {
     }
     return [{ type: "Feature", geometry: { type: type, coordinates: gj } }];
   }
-}
+ }
+}	
