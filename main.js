@@ -21,7 +21,8 @@ function error() {
 
 /*
  * Script to display two tables from Google Sheets as point and geometry layers using Leaflet
- * The Sheets are then imported using PapaParse and overwrite the initially laded layers
+ * The Sheets are then imported using PapaParse and overwrite the 
+ ially laded layers
  */
 
 
@@ -33,7 +34,7 @@ let geomURL =
 let pointsURL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vRZ9_ZWmZbc9RkPWbNLb72jsGcTdZ2DgWlyQ4QQVF7MVb-Goluzm4KfAdX05-DhoAiGyNUd4VpEpUhf/pub?output=csv";
 
-window.addEventListener("DOMContentLoaded", init);
+window.addEventListener("DOMContentLoaded", getMap); //Change init 2 getMap
 
 let map;
 let sidebar;
@@ -42,9 +43,9 @@ let panelID = "my-info-panel";
 /*
  * init() is called when the page has loaded
  */
-function init() {
+function getMap(latitude, longitude) {
   // Create a new Leaflet map centered on the continental US
-  map = L.map("map").setView(latitude, latitude, 14);
+  map = L.map("map").setView(latitude, longitude, 14);
 
   // This is the Carto Positron basemap
   L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.png").addTo(map);
