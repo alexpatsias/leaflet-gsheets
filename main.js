@@ -16,6 +16,12 @@ function error() {
   alert("Unable to retrieve location");
 }
 
+function getMap(latitude, longitude) {
+    L.marker([latitude, longitude], {
+	  draggable:true,
+	  title: "Text for marker",
+  }).addTo(map);
+  
 /* global L Papa */
 
 /*
