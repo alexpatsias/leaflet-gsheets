@@ -57,10 +57,10 @@ function error() {
       subdomains: "abcd",
       maxZoom: 19,
     }
-   L.marker([latitude, longitude], {
-	  draggable:true,
-	  title: "Text for marker",  
-   }).addTo(map);
+   //L.marker([latitude, longitude], {
+	//  draggable:true,
+	//  title: "Text for marker",  
+   //}).addTo(map);
 
 //var marker = L.marker (latitude, longitude) {
 	//  draggable:true,
@@ -231,6 +231,14 @@ function addPoints(data) {
       marker.setIcon(icon);
     }
   }
+}
+
+function getMap(latitude, longitude) {
+	var marker = L.marker([latitude, longitude], {
+		draggable:false,
+		title: "Current Position",
+	}).addTo(map)
+	.bindPopup("<h1> Museum of Byzantine Culture </h1> ");
 }
 
 /*
