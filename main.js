@@ -44,7 +44,7 @@ function error() {
   alert("Unable to retrieve location");
 }
   // Create a new Leaflet map centered on the continental US
-  map = L.map("map").setView([51.5, -0.1], 14);
+  map = L.map("map").setView([38.246510905325074, 21.734608746479122], 14);
 
   // This is the Carto Positron basemap
   L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.png").addTo(map);
