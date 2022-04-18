@@ -34,7 +34,7 @@ let geomURL =
 let pointsURL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vRZ9_ZWmZbc9RkPWbNLb72jsGcTdZ2DgWlyQ4QQVF7MVb-Goluzm4KfAdX05-DhoAiGyNUd4VpEpUhf/pub?output=csv";
 
-//window.addEventListener("DOMContentLoaded", init); 
+window.addEventListener("DOMContentLoaded", init); 
 
 let map;
 let sidebar;
