@@ -50,8 +50,10 @@ var latlngs = [[38.20596168617088,21.768499418765305],[38.20619352837982,21.7684
 var polygon = L.polygon(latlngs, {color: 'blue'}).addTo(map);
 
 // zoom the map to the polygon
-map.fitBounds(polygon.getBounds());
+//map.fitBounds(polygon.getBounds());
 	
+	L.marker([38.244705, 21.729919]).addTo(map);
+
 
   sidebar = L.control
     .sidebar({
