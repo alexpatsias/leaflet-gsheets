@@ -26,24 +26,8 @@ let panelID = "my-info-panel";
  */
 	
 function init() {
-{
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(success, error);
-  } else {
-    alert("Geolocation is not supported by this browser");
-  }    
-}
 
-function success(position) {
-  const latitude = position.coords.latitude;
-  const longitude = position.coords.longitude;
-  //getMap(latitude, longitude);
-}
-
-function error() {
-  alert("Unable to retrieve location");
-}
-  // Create a new Leaflet map centered on the continental US
+	// Create a new Leaflet map centered on the continental US
   map = L.map("map").setView([38.25149047199984, 20.64313147316723], 14);
 
 	//Patra [38.246510905325074, 21.734608746479122]
