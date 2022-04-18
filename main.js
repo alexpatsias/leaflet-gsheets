@@ -59,15 +59,12 @@ function error() {
       maxZoom: 19,
     }
   ).addTo(map);
-   //L.marker([latitude, longitude], {
-	//  draggable:true,
-	//  title: "Text for marker",  
-   //}).addTo(map);
-
-//var marker = L.marker (latitude, longitude) {
-	//  draggable:true,
-	//  title: "Text for marker",
- // }).addTo(map);
+	
+ L.marker([latitude, longitude], {
+	draggable:false,
+	title: "Current Position",
+ }
+).addTo(map);
 
 
   sidebar = L.control
@@ -233,13 +230,6 @@ function addPoints(data) {
       marker.setIcon(icon);
     }
   }
-}
-
-function getMap(latitude, longitude) {
-	var marker = L.marker([latitude, longitude], {
-		draggable:false,
-		title: "Current Position",
-	}).addTo(map);
 }
 
 /*
