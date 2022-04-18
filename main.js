@@ -44,7 +44,7 @@ function error() {
   alert("Unable to retrieve location");
 }
   // Create a new Leaflet map centered on the continental US
-  map = L.map("map").setView([38.246510905325074, 21.734608746479122], 14);
+  map = L.map("map").setView([38.25149047199984, 20.64313147316723], 14);
 
 	//[38.246510905325074, 21.734608746479122]
 	
