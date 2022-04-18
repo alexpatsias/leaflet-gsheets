@@ -55,7 +55,7 @@ function error() {
       attribution:
       "&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> &copy; <a href='http://cartodb.com/attributions'>CartoDB</a>",
      // subdomains: "abcd",
-    //  maxZoom: 19,
+      maxZoom: 19,
     }
    //L.marker([latitude, longitude], {
 	//  draggable:true,
