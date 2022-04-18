@@ -1,22 +1,3 @@
-(() => {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(success, error);
-  } else {
-    alert("Geolocation is not supported by this browser");
-  }    
-})();
-
-function success(position) {
-  const latitude = position.coords.latitude;
-  const longitude = position.coords.longitude;
-  //getMap(latitude, longitude);
-}
-
-function error() {
-  alert("Unable to retrieve location");
-}
-
-
 /* global L Papa */
 
 /*
@@ -45,7 +26,23 @@ let panelID = "my-info-panel";
  */
 	
 function init() {
-	
+	(() => {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(success, error);
+  } else {
+    alert("Geolocation is not supported by this browser");
+  }    
+})();
+
+function success(position) {
+  const latitude = position.coords.latitude;
+  const longitude = position.coords.longitude;
+  //getMap(latitude, longitude);
+}
+
+function error() {
+  alert("Unable to retrieve location");
+}
   // Create a new Leaflet map centered on the continental US
   map = L.map("map").setView([51.5, -0.1], 14);
 
