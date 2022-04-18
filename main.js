@@ -46,7 +46,7 @@ function error() {
   // Create a new Leaflet map centered on the continental US
   map = L.map("map").setView([38.25149047199984, 20.64313147316723], 14);
 
-	//[38.246510905325074, 21.734608746479122]
+	//Patra [38.246510905325074, 21.734608746479122]
 	
 	
   // This is the Carto Positron basemap
@@ -60,12 +60,6 @@ function error() {
     }
   ).addTo(map);
 	
- L.marker([latitude, longitude], {
-	draggable:false,
-	title: "Current Position",
- }
-).addTo(map);
-
 
   sidebar = L.control
     .sidebar({
