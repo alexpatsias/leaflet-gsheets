@@ -44,23 +44,23 @@ function error() {
   alert("Unable to retrieve location");
 }
   // Create a new Leaflet map centered on the continental US
-  map = L.map("map").setView([latitude, longitude], 14);
+  map = L.map("map").setView([38.246510905325074, 21.734608746479122], 14);
 
 	//[38.246510905325074, 21.734608746479122]
 	
 	
   // This is the Carto Positron basemap
   L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.png").addTo(map);
-    //{
-      //attribution:
-        //"&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> &copy; <a href='http://cartodb.com/attributions'>CartoDB</a>",
-      //subdomains: "abcd",
-      //maxZoom: 19,
-    //}
-   //L.marker([latitude, longitude], {
-	//  draggable:true,
-	 // title: "Text for marker",  
-   //}).addTo(map);
+    {
+      attribution:
+      "&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> &copy; <a href='http://cartodb.com/attributions'>CartoDB</a>",
+      subdomains: "abcd",
+      maxZoom: 19,
+    }
+   L.marker([latitude, longitude], {
+	  draggable:true,
+	  title: "Text for marker",  
+   }).addTo(map);
 
 //var marker = L.marker (latitude, longitude) {
 	//  draggable:true,
