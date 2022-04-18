@@ -56,7 +56,10 @@ var polygon = L.polygon(latlngs, {color: 'blue'}).addTo(map);
 //map.fitBounds(polygon.getBounds());
 	
 	L.marker([38.244705, 21.729919]).addTo(map);
-	marker.bindPopup(popupContent).openPopup();
+var popup = L.popup()
+    .setLatLng(latlng)
+    .setContent('<p>Hello world!<br />This is a nice popup.</p>')
+    .openOn(map);
 
 
   sidebar = L.control
