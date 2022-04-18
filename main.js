@@ -55,8 +55,10 @@ var polygon = L.polygon(latlngs, {color: 'blue'}).addTo(map);
 // zoom the map to the polygon
 //map.fitBounds(polygon.getBounds());
 	
-L.marker([38.244705, 21.729919]).addTo(map);
-marker.bindPopup(popupContent).openPopup();
+var marker = L.marker([38.244705, 21.729919], {
+	title: "EAP Headquarters in Patras",
+}).addTo(map)
+.bindPopup("<h1> EAP Headquarters in Patras </h1> ");
 
 
 
