@@ -9,7 +9,7 @@
 function success(position) {
   const latitude = position.coords.latitude;
   const longitude = position.coords.longitude;
-  getMap(latitude, longitude);
+  //getMap(latitude, longitude);
 }
 
 function error() {
