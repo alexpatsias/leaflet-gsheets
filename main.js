@@ -26,13 +26,13 @@ let panelID = "my-info-panel";
  */
 	
 function init() {
-	(() => {
+{
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(success, error);
   } else {
     alert("Geolocation is not supported by this browser");
   }    
-})();
+}
 
 function success(position) {
   const latitude = position.coords.latitude;
