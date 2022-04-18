@@ -237,8 +237,7 @@ function getMap(latitude, longitude) {
 	var marker = L.marker([latitude, longitude], {
 		draggable:false,
 		title: "Current Position",
-	}).addTo(map)
-	.bindPopup("<h1> Museum of Byzantine Culture </h1> ");
+	}).addTo(map);
 }
 
 /*
