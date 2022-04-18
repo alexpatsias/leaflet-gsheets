@@ -50,12 +50,12 @@ function error() {
 	
 	
   // This is the Carto Positron basemap
-  L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.png").addTo(map);
-    {
-      attribution:
-      "&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> &copy; <a href='http://cartodb.com/attributions'>CartoDB</a>",
-      subdomains: "abcd",
-      maxZoom: 19,
+  //L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.png").addTo(map);
+    //{
+     // attribution:
+      //"&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> &copy; <a href='http://cartodb.com/attributions'>CartoDB</a>",
+     // subdomains: "abcd",
+    //  maxZoom: 19,
     }
    //L.marker([latitude, longitude], {
 	//  draggable:true,
@@ -233,12 +233,12 @@ function addPoints(data) {
   }
 }
 
-//function getMap(latitude, longitude) {
-//	var marker = L.marker([latitude, longitude], {
-//		draggable:false,
-//		title: "Current Position",
-//	}).addTo(map);
-//}
+function getMap(latitude, longitude) {
+	var marker = L.marker([latitude, longitude], {
+		draggable:false,
+		title: "Current Position",
+	}).addTo(map);
+}
 
 /*
  * Accepts any GeoJSON-ish object and returns an Array of
