@@ -233,12 +233,12 @@ function addPoints(data) {
   }
 }
 
-function getMap(latitude, longitude) {
-	var marker = L.marker([latitude, longitude], {
-		draggable:false,
-		title: "Current Position",
-	}).addTo(map);
-}
+//function getMap(latitude, longitude) {
+//	var marker = L.marker([latitude, longitude], {
+//		draggable:false,
+//		title: "Current Position",
+//	}).addTo(map);
+//}
 
 /*
  * Accepts any GeoJSON-ish object and returns an Array of
