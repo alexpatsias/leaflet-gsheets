@@ -79,31 +79,43 @@ marker.bindPopup("Old EAP Headquarters in Patras");
             this.closePopup();
         });
 
-(() => {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(success, error);
-  } else {
-    alert("Geolocation is not supported by this browser");
-  }    
-})();
-
-function success(position) {
-  const latitude = position.coords.latitude;
-  const longitude = position.coords.longitude;
-  getMap(latitude, longitude);
-}
-
-function error() {
-  alert("Unable to retrieve location");
+if (!navigator.geolocation) {
+  console.log("Your browser doesn't support geolocation feature!");
+} else {
+  navigator.geolocation.getCurrentPosition(getPosition);
 }
 	
-function getMap(latitude, longitude) {
-  const map = L.map("map").setView([latitude, longitude], 7);
-  L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.png").addTo(map);
-  L.marker([latitude, longitude], {
-	  draggable:true,
-	  title: "Text for marker",
-  }).addTo(map);
+var marker, circle, lat, long, accuracy;
+
+function getPosition(position) {
+  // console.log(position)
+  lat = position.coords.latitude;
+  long = position.coords.longitude;
+  accuracy = position.coords.accuracy;
+
+  if (marker) {
+    map_init.removeLayer(marker);
+  }
+
+  if (circle) {
+    map_init.removeLayer(circle);
+  }
+
+  marker = L.marker([lat, long]);
+  circle = L.circle([lat, long], { radius: accuracy });
+
+  var featureGroup = L.featureGroup([marker, circle]).addTo(map_init);
+
+  map_init.fitBounds(featureGroup.getBounds());
+
+  console.log(
+    "Your coordinate is: Lat: " +
+      lat +
+      " Long: " +
+      long +
+      " Accuracy: " +
+      accuracy
+  );
 }
 	
   sidebar = L.control
