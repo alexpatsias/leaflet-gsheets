@@ -47,16 +47,21 @@ function init() {
 	// create a red polygon from an array of LatLng points
 var latlngs = [[38.20596168617088,21.768499418765305],[38.20619352837982,21.76840822366621],[38.20693120322311,21.768402859248614],[38.20709981356624,21.767539188015963],[38.206290480357346,21.763955757063115],[38.20601226998853,21.765463158407055],[38.20596168617088,21.768499418765305]];
 
-var polygon = L.polygon(latlngs, {color: 'blue'}).addTo(map);
+var polygon = L.polygon(latlngs, {
+	
+	color: 'blue',
+	 			 
+}).addTo(map)
+.bindPopup("<h1> EAP Headquarters in Patras </h1> ");
 
 
 // zoom the map to the polygon
 //map.fitBounds(polygon.getBounds());
 	
 var marker = L.marker([38.244705, 21.729919], {
-	title: "EAP Headquarters in Patras",
+	title: "Old EAP Headquarters in Patras",
 }).addTo(map)
-.bindPopup("<h1> EAP Headquarters in Patras </h1> ");
+.bindPopup("<h1> Old EAP Headquarters in Patras </h1> ");
 
 
 
