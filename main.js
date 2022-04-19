@@ -105,9 +105,9 @@ polygon.bindPopup("EAP Headquarters in Patras");
 //map.fitBounds(polygon.getBounds());
 	
 var marker = L.marker([38.206741, 21.764838], {
-	title: "Old EAP Headquarters in Patras",
+	title: "Entrance of EAP Headquarters in Patras",
 	}).addTo(map)
-.bindPopup("<h1> Old EAP Headquarters in Patras </h1> ");
+.bindPopup("<h1> Entrance of EAP Headquarters in Patras </h1> ");
 
 marker.bindPopup("Old EAP Headquarters in Patras");
         marker.on('mouseover', function (e) {
