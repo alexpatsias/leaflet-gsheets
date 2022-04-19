@@ -54,7 +54,7 @@ var polygon = L.polygon(latlngs, {
 }).addTo(map)
 .bindPopup("<h1> EAP Headquarters in Patras </h1> ");
 
-polygon.bindPopup("Old EAP Headquarters in Patras");
+polygon.bindPopup("EAP Headquarters in Patras");
         polygon.on('mouseover', function (e) {
             this.openPopup();
         });
