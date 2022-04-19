@@ -45,45 +45,6 @@ function init() {
     }
   ).addTo(map);
 
-if (!navigator.geolocation) {
-  console.log("Your browser doesn't support geolocation feature!");
-} else {
-  navigator.geolocation.getCurrentPosition(getPosition);
-}
-	
-var marker, circle, lat, long, accuracy;
-
-function getPosition(position) {
-  console.log(position)
-  lat = position.coords.latitude;
-  long = position.coords.longitude;
-  accuracy = position.coords.accuracy;
-
-  if (marker) {
-    map.removeLayer(marker);
-  }
-
-  if (circle) {
-    map.removeLayer(circle);
-  }
-
-  marker = L.marker([lat, long]);
-  circle = L.circle([lat, long], { radius: accuracy });
-
-  var featureGroup = L.featureGroup([marker,circle]).addTo(map);
-
-  map.fitBounds(featureGroup.getBounds());
-
-  console.log(
-    "Your coordinate is: Lat: " +
-      lat +
-      " Long: " +
-      long +
-      " Accuracy: " +
-      accuracy
-  );
-}
-	
 	// create a red polygon from an array of LatLng points
 var latlngs = [[38.20596168617088,21.768499418765305],[38.20619352837982,21.76840822366621],[38.20693120322311,21.768402859248614],[38.20709981356624,21.767539188015963],[38.206290480357346,21.763955757063115],[38.20601226998853,21.765463158407055],[38.20596168617088,21.768499418765305]];
 
@@ -118,6 +79,32 @@ marker.bindPopup("Old EAP Headquarters in Patras");
             this.closePopup();
         });
 
+(() => {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(success, error);
+  } else {
+    alert("Geolocation is not supported by this browser");
+  }    
+})();
+
+function success(position) {
+  const latitude = position.coords.latitude;
+  const longitude = position.coords.longitude;
+  getMap(latitude, longitude);
+}
+
+function error() {
+  alert("Unable to retrieve location");
+}
+	
+function getMap(latitude, longitude) {
+  const map = L.map("map").setView([latitude, longitude], 7);
+  L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.png").addTo(map);
+  L.marker([latitude, longitude], {
+	  draggable:true,
+	  title: "Text for marker",
+  }).addTo(map);
+	
   sidebar = L.control
     .sidebar({
       container: "sidebar",
