@@ -49,8 +49,8 @@ function getPosition(position) {
     map.removeLayer(circle);
   }
 
-  marker = L.marker([lat, long]);
-  circle = L.circle([lat, long], { radius: accuracy });
+  var marker = L.marker([lat, long]);
+  var circle = L.circle([lat, long], { radius: accuracy });
 
   var featureGroup = L.featureGroup([marker,circle]).addTo(map);
 
