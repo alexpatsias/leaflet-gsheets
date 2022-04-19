@@ -79,8 +79,8 @@ function getPosition(position) {
       lat +
       " Long: " +
       long +
-      " Accuracy: " +
-      accuracy
+      //" Accuracy: " +
+      //accuracy
   );
 }
 	
