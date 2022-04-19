@@ -27,45 +27,7 @@ let panelID = "my-info-panel";
 	
 function init() {
 
-if (!navigator.geolocation) {
-  console.log("Your browser doesn't support geolocation feature!");
-} else {
-  navigator.geolocation.getCurrentPosition(getPosition);
-}
-	
-var marker, circle, lat, long, accuracy;
 
-function getPosition(position) {
-  // console.log(position)
-  lat = position.coords.latitude;
-  long = position.coords.longitude;
-  accuracy = position.coords.accuracy;
-
-  if (marker) {
-    map_init.removeLayer(marker);
-  }
-
-  if (circle) {
-    map_init.removeLayer(circle);
-  }
-
-  marker = L.marker([lat, long]);
-  circle = L.circle([lat, long], { radius: accuracy });
-
-  var featureGroup = L.featureGroup([marker, circle]).addTo(map_init);
-
-  map_init.fitBounds(featureGroup.getBounds());
-
-  console.log(
-    "Your coordinate is: Lat: " +
-      lat +
-      " Long: " +
-      long +
-      " Accuracy: " +
-      accuracy
-  );
-}
-	
 	// Create a new Leaflet map centered on the continental US
   map = L.map("map").setView([38.25149047199984, 20.64313147316723], 14);
 
@@ -83,6 +45,45 @@ function getPosition(position) {
     }
   ).addTo(map);
 
+if (!navigator.geolocation) {
+  console.log("Your browser doesn't support geolocation feature!");
+} else {
+  navigator.geolocation.getCurrentPosition(getPosition);
+}
+	
+var marker, circle, lat, long, accuracy;
+
+function getPosition(position) {
+  // console.log(position)
+  lat = position.coords.latitude;
+  long = position.coords.longitude;
+  accuracy = position.coords.accuracy;
+
+  if (marker) {
+    map.removeLayer(marker);
+  }
+
+  if (circle) {
+    map.removeLayer(circle);
+  }
+
+  marker = L.marker([lat, long]);
+  circle = L.circle([lat, long], { radius: accuracy });
+
+  var featureGroup = L.featureGroup([marker, circle]).addTo(map);
+
+  map_init.fitBounds(featureGroup.getBounds());
+
+  console.log(
+    "Your coordinate is: Lat: " +
+      lat +
+      " Long: " +
+      long +
+      " Accuracy: " +
+      accuracy
+  );
+}
+	
 	// create a red polygon from an array of LatLng points
 var latlngs = [[38.20596168617088,21.768499418765305],[38.20619352837982,21.76840822366621],[38.20693120322311,21.768402859248614],[38.20709981356624,21.767539188015963],[38.206290480357346,21.763955757063115],[38.20601226998853,21.765463158407055],[38.20596168617088,21.768499418765305]];
 
