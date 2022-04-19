@@ -104,6 +104,7 @@ function getMap(latitude, longitude) {
 	  draggable:true,
 	  title: "Text for marker",
   }).addTo(map);
+}
 	
   sidebar = L.control
     .sidebar({
@@ -306,4 +307,3 @@ function parseGeom(gj) {
     return [{ type: "Feature", geometry: { type: type, coordinates: gj } }];
   }
  }
-	
