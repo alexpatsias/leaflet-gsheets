@@ -60,10 +60,16 @@ var polygon = L.polygon(latlngs, {
 	
 var marker = L.marker([38.244705, 21.729919], {
 	title: "Old EAP Headquarters in Patras",
-}).addTo(map)
+	}).addTo(map)
 .bindPopup("<h1> Old EAP Headquarters in Patras </h1> ");
 
-
+marker.bindPopup("Popup content");
+        marker.on('mouseover', function (e) {
+            this.openPopup();
+        });
+        marker.on('mouseout', function (e) {
+            this.closePopup();
+        });
 
   sidebar = L.control
     .sidebar({
