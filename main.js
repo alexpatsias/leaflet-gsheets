@@ -78,15 +78,6 @@ marker.bindPopup("Old EAP Headquarters in Patras");
             this.closePopup();
         });
 
-  console.log(
-    "Your coordinate is: Lat: " +
-      lat +
-      " Long: " +
-      long +
-      " Accuracy: " +
-      accuracy
-  );
-}
 	
   sidebar = L.control
     .sidebar({
