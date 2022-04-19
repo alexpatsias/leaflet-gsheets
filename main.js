@@ -109,7 +109,7 @@ var marker = L.marker([38.206741, 21.764838], {
 	}).addTo(map)
 .bindPopup("<h1> Entrance of EAP Headquarters in Patras </h1> ");
 
-marker.bindPopup("Old EAP Headquarters in Patras");
+marker.bindPopup("Entrance of EAP Headquarters in Patras");
         marker.on('mouseover', function (e) {
             this.openPopup();
         });
