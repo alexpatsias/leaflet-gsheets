@@ -94,19 +94,19 @@ function getPosition(position) {
   accuracy = position.coords.accuracy;
 
   if (marker) {
-    map_init.removeLayer(marker);
+    map.removeLayer(marker);
   }
 
   if (circle) {
-    map_init.removeLayer(circle);
+    map.removeLayer(circle);
   }
 
   marker = L.marker([lat, long]);
   circle = L.circle([lat, long], { radius: accuracy });
 
-  var featureGroup = L.featureGroup([marker, circle]).addTo(map_init);
+  var featureGroup = L.featureGroup([marker, circle]).addTo(map);
 
-  map_init.fitBounds(featureGroup.getBounds());
+  map.fitBounds(featureGroup.getBounds());
 
   console.log(
     "Your coordinate is: Lat: " +
