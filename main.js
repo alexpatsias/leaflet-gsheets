@@ -57,7 +57,7 @@ function getPosition(position) {
   // console.log(position)
   lat = position.coords.latitude;
   long = position.coords.longitude;
-  //accuracy = position.coords.accuracy;
+  accuracy = position.coords.accuracy;
 
   if (marker) {
     map.removeLayer(marker);
@@ -68,7 +68,7 @@ function getPosition(position) {
   }
 
   marker = L.marker([lat, long]);
-  circle = L.circle([lat, long]); //, { radius: accuracy });
+  circle = L.circle([lat, long], { radius: accuracy });
 
   var featureGroup = L.featureGroup([marker, circle]).addTo(map);
 
@@ -79,8 +79,8 @@ function getPosition(position) {
       lat +
       " Long: " +
       long +
-      //" Accuracy: " +
-      //accuracy
+      " Accuracy: " +
+      accuracy
   );
 }
 	
