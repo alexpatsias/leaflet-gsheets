@@ -54,6 +54,13 @@ var polygon = L.polygon(latlngs, {
 }).addTo(map)
 .bindPopup("<h1> EAP Headquarters in Patras </h1> ");
 
+polygon.bindPopup("Old EAP Headquarters in Patras");
+        polygon.on('mouseover', function (e) {
+            this.openPopup();
+        });
+        polygon.on('mouseout', function (e) {
+            this.closePopup();
+        });
 
 // zoom the map to the polygon
 //map.fitBounds(polygon.getBounds());
@@ -63,7 +70,7 @@ var marker = L.marker([38.244705, 21.729919], {
 	}).addTo(map)
 .bindPopup("<h1> Old EAP Headquarters in Patras </h1> ");
 
-marker.bindPopup("Popup content");
+marker.bindPopup("Old EAP Headquarters in Patras");
         marker.on('mouseover', function (e) {
             this.openPopup();
         });
