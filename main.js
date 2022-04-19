@@ -27,6 +27,45 @@ let panelID = "my-info-panel";
 
 function init() {
 
+if (!navigator.geolocation) {
+  console.log("Your browser doesn't support geolocation feature!");
+} else {
+  navigator.geolocation.getCurrentPosition(getPosition);
+}
+	
+var marker, circle, lat, long, accuracy;
+
+function getPosition(position) {
+  console.log(position)
+  lat = position.coords.latitude;
+  long = position.coords.longitude;
+  accuracy = position.coords.accuracy;
+
+  if (marker) {
+    map.removeLayer(marker);
+  }
+
+  if (circle) {
+    map.removeLayer(circle);
+  }
+
+  marker = L.marker([lat, long]);
+  circle = L.circle([lat, long], { radius: accuracy });
+
+  var featureGroup = L.featureGroup([marker,circle]).addTo(map);
+
+  map.fitBounds(featureGroup.getBounds());
+
+  console.log(
+    "Your coordinate is: Lat: " +
+      lat +
+      " Long: " +
+      long +
+      " Accuracy: " +
+      accuracy
+  );
+}
+
 	// Create a new Leaflet map centered on the continental US
   map = L.map("map").setView([38.25149047199984, 20.64313147316723], 14);
 
@@ -279,42 +318,4 @@ function parseGeom(gj) {
     }
     return [{ type: "Feature", geometry: { type: type, coordinates: gj } }];
   }	
-if (!navigator.geolocation) {
-  console.log("Your browser doesn't support geolocation feature!");
-} else {
-  navigator.geolocation.getCurrentPosition(getPosition);
-}
-	
-var marker, circle, lat, long, accuracy;
-
-function getPosition(position) {
-  console.log(position)
-  lat = position.coords.latitude;
-  long = position.coords.longitude;
-  accuracy = position.coords.accuracy;
-
-  if (marker) {
-    map.removeLayer(marker);
-  }
-
-  if (circle) {
-    map.removeLayer(circle);
-  }
-
-  marker = L.marker([lat, long]);
-  circle = L.circle([lat, long], { radius: accuracy });
-
-  var featureGroup = L.featureGroup([marker,circle]).addTo(map);
-
-  map.fitBounds(featureGroup.getBounds());
-
-  console.log(
-    "Your coordinate is: Lat: " +
-      lat +
-      " Long: " +
-      long +
-      " Accuracy: " +
-      accuracy
-  );
-}
 }
